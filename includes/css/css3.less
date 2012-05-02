@@ -1,0 +1,324 @@
+//============================================================
+//
+// LESS CSS3 Mixins
+//
+// @description CSS3 mixins for LESS projects
+// @version 1.00
+//
+// @author Matthew Wagerfield
+// @see http://matthew.wagerfield.com
+// @see http://twitter.com/mwagerfield
+//
+// ---------- INDEX ----------
+//
+// Decoration:
+// @mixin border-radius
+// @mixin box-shadow
+// @mixin text-shadow
+//
+// Transformation:
+// @mixin transform
+// @mixin matrix
+// @mixin translate
+// @mixin scale
+// @mixin rotate
+// @mixin skew
+// @mixin backface-visibility
+//
+// Animation:
+// @mixin transition
+// @mixin easing
+//
+//============================================================
+
+
+
+//============================================================
+//
+// border-radius
+//
+// @param top-left-radius     :  px, em, %;
+// @param top-right-radius    :  px, em, %;
+// @param bottom-right-radius :  px, em, %;
+// @param bottom-left-radius  :  px, em, %;
+//
+// @see http://www.w3.org/TR/css3-background/#border-radius
+//
+//============================================================
+
+.border-radius(@args) {
+    -webkit-border-radius: @args;
+       -moz-border-radius: @args;
+            border-radius: @args;
+
+    -webkit-background-clip: padding-box;
+       -moz-background-clip: padding;
+            background-clip: padding-box;
+}
+
+
+
+//============================================================
+//
+// box-shadow
+//
+// @param colour              :  #000, rgba, hsla;
+// @param horizontal-offset   :  px, em;
+// @param vertical-offset     :  px, em;
+// @param blur-radius         :  px, em;
+// @param spread-distance     :  px, em,
+// @param inset               :  inset;
+//
+// @see http://www.w3.org/TR/css3-background/#box-shadow
+//
+//============================================================
+
+.box-shadow(@args) {
+    -webkit-box-shadow: @args;
+       -moz-box-shadow: @args;
+            box-shadow: @args;
+}
+
+
+
+//============================================================
+//
+// text-shadow
+//
+// @param colour              :  #000, rgba, hsla;
+// @param horizontal-offset   :  px, em;
+// @param vertical-offset     :  px, em;
+// @param blur-radius         :  px, em;
+//
+// @see http://www.w3.org/TR/css3-text/#text-shadow
+//
+//============================================================
+
+.text-shadow(@args) {
+    text-shadow: @args;
+}
+
+
+
+//============================================================
+//
+// transform
+//
+// @param functions           :  matrix(@args)
+//                            :  translate(@args)
+//                            :  scale(@args)
+//                            :  rotate(@args)
+//                            :  skew(@args)
+//
+// @see http://www.w3.org/TR/css3-2d-transforms/
+//
+//============================================================
+
+.transform(@args) {
+    -webkit-transform: @args;
+       -moz-transform: @args;
+        -ms-transform: @args;
+         -o-transform: @args;
+            transform: @args;
+}
+
+
+
+//============================================================
+//
+// matrix
+//
+// @param a                   :  Number;
+// @param b                   :  Number;
+// @param c                   :  Number;
+// @param d                   :  Number;
+// @param e                   :  Number;
+// @param f                   :  Number;
+//
+// @see http://www.w3.org/TR/css3-2d-transforms/
+//
+//============================================================
+
+.matrix(@args) {
+    -webkit-transform: matrix(@args);
+       -moz-transform: matrix(@args);
+        -ms-transform: matrix(@args);
+         -o-transform: matrix(@args);
+            transform: matrix(@args);
+}
+
+
+
+//============================================================
+//
+// translate
+//
+// @param translate-x         :  px;
+// @param translate-y         :  px;
+//
+// @see http://www.w3.org/TR/css3-2d-transforms/
+//
+//============================================================
+
+.translate(@args) {
+    -webkit-transform: translate(@args);
+       -moz-transform: translate(@args);
+        -ms-transform: translate(@args);
+         -o-transform: translate(@args);
+            transform: translate(@args);
+}
+
+
+
+//============================================================
+//
+// scale
+//
+// @param scale-x             :  0.5, 2, etc;
+// @param scale-y             :  0.5, 2, etc;
+//
+// @see http://www.w3.org/TR/css3-2d-transforms/
+//
+//============================================================
+
+.scale(@args) {
+    -webkit-transform: scale(@args);
+       -moz-transform: scale(@args);
+        -ms-transform: scale(@args);
+         -o-transform: scale(@args);
+            transform: scale(@args);
+}
+
+
+
+//============================================================
+//
+// rotate
+//
+// @param angle               :  0deg;
+//
+// @see http://www.w3.org/TR/css3-2d-transforms/
+//
+//============================================================
+
+.rotate(@args) {
+    -webkit-transform: rotate(@args);
+       -moz-transform: rotate(@args);
+        -ms-transform: rotate(@args);
+         -o-transform: rotate(@args);
+            transform: rotate(@args);
+}
+
+
+
+//============================================================
+//
+// skew
+//
+// @param axis-x              :  0deg;
+// @param axis-y              :  0deg;
+//
+// @see http://www.w3.org/TR/css3-2d-transforms/
+//
+//============================================================
+
+.skew(@args) {
+    -webkit-transform: skew(@args);
+       -moz-transform: skew(@args);
+        -ms-transform: skew(@args);
+         -o-transform: skew(@args);
+            transform: skew(@args);
+}
+
+
+
+//============================================================
+//
+// backface-visibility
+//
+// @param visibility          :  visible | hidden;
+//
+// @see http://www.w3.org/TR/css3-3d-transforms/
+//
+//============================================================
+
+.backface-visibility(@args) {
+    -webkit-backface-visibility: @args;
+       -moz-backface-visibility: @args;
+        -ms-backface-visibility: @args;
+         -o-backface-visibility: @args;
+            backface-visibility: @args;
+}
+
+
+
+//============================================================
+//
+// transition
+//
+// @param properties          :  all, left, opacity, etc;
+// @param duration            :  1s, 1000ms;
+// @param delay               :  1s, 1000ms;
+// @param easing              :  linear, ease-in-out, etc;
+//
+// @see http://www.w3.org/TR/css3-transitions/
+//
+//============================================================
+
+.transition(@args) {
+    -webkit-transition: @args;
+       -moz-transition: @args;
+        -ms-transition: @args;
+         -o-transition: @args;
+            transition: @args;
+}
+
+
+
+//============================================================
+//
+// easing
+//
+// Thanks to Robert Penner for his sterling work on easing,
+// and to Matthew Lein for converting these functions into
+// approximated cubic-bezier functions. Respect.
+//
+// @see http://robertpenner.com/
+// @see http://matthewlein.com/ceaser/
+//
+//============================================================
+
+// Cubic
+@easeInCubic     :  cubic-bezier(0.550, 0.055, 0.675, 0.190);
+@easeOutCubic    :  cubic-bezier(0.215, 0.610, 0.355, 1.000);
+@easeInOutCubic  :  cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+// Circ
+@easeInCirc      :  cubic-bezier(0.600, 0.040, 0.980, 0.335);
+@easeOutCirc     :  cubic-bezier(0.075, 0.820, 0.165, 1.000);
+@easeInOutCirc   :  cubic-bezier(0.785, 0.135, 0.150, 0.860);
+
+// Expo
+@easeInExpo      :  cubic-bezier(0.950, 0.050, 0.795, 0.035);
+@easeOutExpo     :  cubic-bezier(0.190, 1.000, 0.220, 1.000);
+@easeInOutExpo   :  cubic-bezier(1.000, 0.000, 0.000, 1.000);
+
+// Quad
+@easeInQuad      :  cubic-bezier(0.550, 0.085, 0.680, 0.530);
+@easeOutQuad     :  cubic-bezier(0.250, 0.460, 0.450, 0.940);
+@easeInOutQuad   :  cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+// Quart
+@easeInQuart     :  cubic-bezier(0.895, 0.030, 0.685, 0.220);
+@easeOutQuart    :  cubic-bezier(0.165, 0.840, 0.440, 1.000);
+@easeInOutQuart  :  cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+// Quint
+@easeInQuint     :  cubic-bezier(0.755, 0.050, 0.855, 0.060);
+@easeOutQuint    :  cubic-bezier(0.230, 1.000, 0.320, 1.000);
+@easeInOutQuint  :  cubic-bezier(0.860, 0.000, 0.070, 1.000);
+
+// Sine
+@easeInSine      :  cubic-bezier(0.470, 0.000, 0.745, 0.715);
+@easeOutSine     :  cubic-bezier(0.390, 0.575, 0.565, 1.000);
+@easeInOutSine   :  cubic-bezier(0.445, 0.050, 0.550, 0.950);
